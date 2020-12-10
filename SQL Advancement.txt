@@ -1,38 +1,40 @@
-SELECT * FROM PERSON 
+SELECT * FROM PERSON                                                                  #selecting person table to add information into 
 	
 	INSERT INTO PERSON (PERSON_ID, FIRST_NAME, LAST_NAME)
-		(19, "TAYLOR","SCOTT");
-WHILE TRUE: 
-	ALTER TABLE PERSON ADD YEAR_OF_BIRTH YEAR(4) NOT NULL; 
-	
-	
-IF FIRST_NAME IS NOT NULL AND LAST_NAME IS NOT NULL: 
-	DELETE FROM PERSON WHERE FIRST_NAME = " " AND LAST NAME= " "
-
+		(19, "TAYLOR","SCOTT");   
 SELECT * FROM CONTACT_LIST
 	INSERT INTO CONTACT_LIST(CONNECTION_ID, PERSON_ID, CONTACT_ID, FAVORITE)
 		(19, 9, 5, 'N')
+SELECT message_id, sender_id, receiver_id , message, send_datetime FROM message WHERE sender_id in
+	(select person_id from person where first_name like 'Taylor' and last_name like 'Scott');
+BEGIN
+		
+IF FIRST_NAME IS NOT NULL AND LAST_NAME IS NOT NULL: 
+	DELETE FROM PERSON WHERE FIRST_NAME = " " AND LAST NAME= " "
+END
 
+BEGIN 
 IF CONTACT_ID FROM CONTACT_LIST = 1:
 	SET FAVORITE = 'Y'
-
-ELSE: 
+END
+ELSE 
 	SET FAVORITE ='N' 
-	
+END
+
+WHILE TRUE: 
+BEGIN
 CREATE TABLE IMAGE(
 	image_id INT(8) UNSIGNED NOT NULL auto_increment,
     	image_name VARCHAR(50) NOT NULL,
     	image_location VARCHAR(250) NOT NULL,
      	PRIMARY KEY(image_id)
      ); 
+ 
 CREATE TABLE MESSAGE_IMAGE(
 	image_id INT(8) NOT NULL,
     	message_id INT(8) NOT NULL,
     	PRIMARY KEY (image_id, message_id));
-
-SELECT message_id, sender_id, receiver_id , message, send_datetime FROM message WHERE sender_id in
-
-    (select person_id from person where first_name like 'Taylor' and last_name like 'Scott');
+END
 
 
 
