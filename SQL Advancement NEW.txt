@@ -31,8 +31,8 @@ IF CONTACT_ID FROM CONTACT_LIST = 1
 ELSE: 
 	SET FAVORITE ='N'; 
 	
-IF NOT EXISTS(
-    SELECT * FROM SYS.OBJECTS WHERE image = IMAGE('[REAL_PERS]'.[IMAGE]')
+IF NOT EXISTS(                                                                                           #this creates the tables if they do not already exist
+    SELECT * FROM SYS.OBJECTS WHERE image = IMAGE('[REAL_PERS]'.[IMAGE]')                            #this can be adjusted to any new tables that the programmer wants to make
     )
 BEGIN
     CREATE TABLE [REAL_PERS].[IMAGE]
